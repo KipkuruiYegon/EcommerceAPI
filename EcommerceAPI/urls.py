@@ -21,12 +21,12 @@ from EcommerceAPI import settings
 
 
 from rest_framework import routers
-from shopMIT.views import ProductViewSet
+from shopMIT.views import ProductView
 
 router = routers.DefaultRouter()
-router.register(r'products', ProductViewSet)
+router.register('products', ProductView)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('shopMIT/api/', include(router.urls))
+    path('shopMITapi/', include(router.urls))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
